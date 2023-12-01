@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab12.Views.TaskView">
+    <ContentPage.Content>
+        <StackLayout Padding="50">
+            <Label Text="Title"/>
+            <Entry Placeholder="Ingresar titulo" Text="{Binding Title}"></Entry>
+            <Label Text="Description"/>
+            <Entry Placeholder="Ingresar Descripcion" Text="{Binding Description}"></Entry>
+            <Label Text="Status"/>
+            <Picker>
+                <Picker.Items>
+                    <x:String>Item1</x:String>
+                    <x:String>Item1</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="Save" Command="{Binding Save}"/>
+                <Button Text="Get" Command="{Binding Get}"/>
+            </StackLayout>
+            <ListView ItemsSource="{Binding Task}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Title}"></Label>
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
